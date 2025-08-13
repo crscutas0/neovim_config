@@ -8,10 +8,8 @@ return {
 
     -- Persistent undo
     vim.o.undofile = true
-    vim.o.undodir = os.getenv("HOME") .. "/undo"
+    vim.o.undodir = os.getenv("HOME") .. "/.config/nvim/undo"
     vim.fn.mkdir(vim.o.undodir, "p")
-
-    vim.keymap.set("n", "<leader>eu", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
   end
 }
 

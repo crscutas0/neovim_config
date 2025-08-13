@@ -61,6 +61,7 @@ return {
     -- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
     -- { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
     { "<leader>ei", function() Snacks.picker.icons() end, desc = "Icons" },
+    { "<leader>eu", function() Snacks.picker.undo() end, desc = "Undo History" },
     -- { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
     -- { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
     -- { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
