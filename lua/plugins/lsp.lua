@@ -1,35 +1,14 @@
 return {
   {
-    "williamboman/mason.nvim",
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
-    config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", }
-      })
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
+    "neovim/nvim-lspconfig",
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "neovim/nvim-lspconfig",
-      "folke/snacks.nvim",
+      { "williamboman/mason.nvim", config = true },
+      { "williamboman/mason-lspconfig.nvim" },
     },
     config = function()
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
       local lspconfig = require("lspconfig")
+      local mason_lspconfig = require("mason-lspconfig")
 
-      require("luasnip.loaders.from_vscode").lazy_load()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      -- Define on_attach function for keymaps
       local on_attach = function(_, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, opts)
@@ -37,23 +16,29 @@ return {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
       end
 
+      mason_lspconfig.setup({
+        ensure_installed = { "lua_ls", "ts_ls", "pylsp" },
+      })
+
       lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-          Lua = { diagnostics = { globals = { "vim" } } },
-        },
+        root_dir = lspconfig.util.root_pattern(".git", "."),
       })
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-
-      lspconfig.pylsp.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp", -- Completion plugin
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = function()
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
       cmp.setup({
         snippet = {
@@ -62,18 +47,17 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete(),
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
+
         sources = cmp.config.sources({
-          { name = "nvim_lsp", duplicates = 0 },
           { name = "luasnip", duplicates = 0 },
           { name = "buffer", duplicates = 0 },
           { name = "path", duplicates = 0 },
         }),
       })
     end,
-  }
+  },
 }
