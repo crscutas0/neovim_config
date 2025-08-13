@@ -14,7 +14,7 @@
 ```
 git clone https://github.com/crscutas0/neovim_config.git ~/.config/nvim
 rm -rf ~/.config/nvim/.git
-rm README.md
+rm  ~/config/nvim/README.md
 ```
 ## Keymaps
 -- soon.....
