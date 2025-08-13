@@ -5,10 +5,12 @@
 - Snacks
 - Neotree
 - TreeSitter
-- Blink.cmp
+- Nvim.cmp / Blink.cmp
 - Mason
 - Catppuccin (Colors)
 - LSP
+- Whichkey
+- Undotree
 
 ## Installation
 ```
@@ -17,5 +19,14 @@ rm -rf ~/.config/nvim/.git
 rm  ~/config/nvim/README.md
 ```
 ## Keymaps
--- soon.....
+
+leader -> `<spacebar>`
+
+Whichkey plugin should give you hints what are the available keybinds. Pressing leader should display the hint dialogue.
+
+#### CRTRL Keybinds
+CTRL + r -> (LSP) Rename variable
+CTRL + s -> (explorer, picker) Split horizontal
+CTRL + x -> (explorer, picker) Split vertically
+CTRL + s -> (n) Save file
 
