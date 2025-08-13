@@ -26,7 +26,10 @@ Whichkey plugin should give you hints what are the available keybinds. Pressing 
 
 #### CRTRL Keybinds
 CTRL + r -> (LSP) Rename variable
+
 CTRL + s -> (explorer, picker) Split horizontal
+
 CTRL + x -> (explorer, picker) Split vertically
+
 CTRL + s -> (n) Save file
 
