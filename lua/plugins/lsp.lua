@@ -13,11 +13,6 @@ return {
         ensure_installed = { "lua_ls", "ts_ls", "pyright" },
       })
 
-      local servers = { "lua_ls", "ts_ls", "pyright" }
-      for _, server in ipairs(servers) do
-        lspconfig[server].setup({})
-      end
-
       local on_attach = function(_, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, opts)
