@@ -1,12 +1,8 @@
 return {
   {
     "williamboman/mason.nvim",
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
     config = function()
       require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "pylsp" }
-      })
     end,
   },
   {
@@ -35,6 +31,13 @@ return {
         vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, opts)
         vim.keymap.set('i', '<C-r>', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format()
+          end,
+        })
       end
 
       lspconfig.lua_ls.setup({
