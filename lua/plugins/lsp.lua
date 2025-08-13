@@ -17,17 +17,19 @@ return {
       "neovim/nvim-lspconfig",
       "folke/snacks.nvim",
     },
+
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
       local lspconfig = require("lspconfig")
 
       require("luasnip.loaders.from_vscode").lazy_load()
+
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Define on_attach function for keymaps
-      local on_attach = function(_, bufnr)
+      local on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
+
         vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, opts)
         vim.keymap.set('i', '<C-r>', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
@@ -35,7 +37,13 @@ return {
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
           callback = function()
-            vim.lsp.buf.format()
+            if client:supports_method("textDocument/formatting") then
+              if vim.lsp.buf.format_async then
+                vim.lsp.buf.format_async()
+              else
+                vim.lsp.buf.format()
+              end
+            end
           end,
         })
       end
@@ -56,6 +64,55 @@ return {
       lspconfig.pylsp.setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        settings = {
+          pylsp = {
+            plugins = {
+              -- Enable Django plugin for template support
+              pylsp_django = { enabled = true },
+              pycodestyle = { enabled = true },
+              mypy = { enabled = true },
+            },
+          },
+        },
+      })
+
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = {
+          "html",
+          "css",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "svelte",
+          "astro",
+          "php",
+        }, -- Supported filetypes for Tailwind
+        root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "package.json"),
+      })
+
+      lspconfig.jdtls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "java" },
+        root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git") or vim.fn.getcwd(),
+        settings = {
+          java = {
+            signatureHelp = { enabled = true },
+            contentProvider = { preferred = "fernflower" },
+            completion = {
+              favoriteStaticMembers = {
+                "org.junit.Assert.*",
+                "org.junit.Assume.*",
+                "java.util.Objects.requireNonNull",
+                "java.util.Objects.requireNonNullElse",
+              },
+            },
+          },
+        },
       })
 
       cmp.setup({
@@ -64,17 +121,19 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
+
         mapping = cmp.mapping.preset.insert({
           ["<Tab>"] = cmp.mapping.select_next_item(),
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<C-Space>"] = cmp.mapping.complete(),
         }),
+
         sources = cmp.config.sources({
-          { name = "nvim_lsp", duplicates = 0 },
-          { name = "luasnip", duplicates = 0 },
-          { name = "buffer", duplicates = 0 },
-          { name = "path", duplicates = 0 },
+          { name = "nvim_lsp" }, -- Removed invalid duplicates option
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
         }),
       })
     end,
