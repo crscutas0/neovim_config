@@ -32,3 +32,4 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", function()
   vim.cmd("w")
 end, { desc = "Save file" })
 
+vim.o.swapfile = false
