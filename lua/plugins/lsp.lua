@@ -32,7 +32,7 @@ return {
 
         vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, opts)
         vim.keymap.set('i', '<C-r>', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', '<C-Space>', vim.lsp.buf.code_action, opts)
 
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
@@ -67,7 +67,6 @@ return {
         settings = {
           pylsp = {
             plugins = {
-              -- Enable Django plugin for template support
               pylsp_django = { enabled = true },
               pycodestyle = { enabled = true },
               mypy = { enabled = true },
@@ -91,28 +90,7 @@ return {
           "astro",
           "php",
         }, -- Supported filetypes for Tailwind
-        root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "package.json"),
-      })
-
-      lspconfig.jdtls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        filetypes = { "java" },
-        root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git") or vim.fn.getcwd(),
-        settings = {
-          java = {
-            signatureHelp = { enabled = true },
-            contentProvider = { preferred = "fernflower" },
-            completion = {
-              favoriteStaticMembers = {
-                "org.junit.Assert.*",
-                "org.junit.Assume.*",
-                "java.util.Objects.requireNonNull",
-                "java.util.Objects.requireNonNullElse",
-              },
-            },
-          },
-        },
+        -- root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "package.json"),
       })
 
       cmp.setup({
@@ -126,7 +104,6 @@ return {
           ["<Tab>"] = cmp.mapping.select_next_item(),
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete(),
         }),
 
         sources = cmp.config.sources({
