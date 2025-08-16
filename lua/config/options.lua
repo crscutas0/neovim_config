@@ -29,7 +29,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
   vim.cmd("w")
-end, { desc = "Save file" })
+end, { desc = "Save file and return to normal mode" })
 
 vim.o.swapfile = false
