@@ -29,6 +29,8 @@ CTRL + r -> (LSP) Rename variable
 
 CTRL + space -> Code action
 
+CTRL + t -> Go back from reference
+
 CTRL + s -> (explorer, picker) Split horizontal
 
 CTRL + x -> (explorer, picker) Split vertically
