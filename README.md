@@ -5,12 +5,12 @@
 - Snacks
 - Neotree
 - TreeSitter
-- Nvim.cmp / Blink.cmp
+- Blink.cmp
 - Mason
 - Catppuccin (Colors)
-- LSP
 - Whichkey
 - Undotree
+- Autopair
 
 ## Installation
 ```
@@ -24,8 +24,10 @@ leader -> `<spacebar>`
 
 Whichkey plugin should give you hints what are the available keybinds. Pressing leader should display the hint dialogue.
 
-#### CRTRL Keybinds
+#### CTRL and Shift Keybinds
 CTRL + r -> (LSP) Rename variable
+
+CTRL + space -> Code action
 
 CTRL + s -> (explorer, picker) Split horizontal
 
@@ -33,3 +35,8 @@ CTRL + x -> (explorer, picker) Split vertically
 
 CTRL + s -> (n) Save file
 
+CTRL + ww -> (n) Move to different buffers
+
+Shift + [hl] -> tab left and right
+
+Shift + [x] -> close other tabs
