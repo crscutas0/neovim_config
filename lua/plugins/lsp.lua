@@ -33,14 +33,6 @@ return {
 					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
 				end
 
-				map("n", "gd", function()
-					require("snacks.picker").lsp_definitions()
-				end, "Goto Definition (Snacks)")
-
-				map("n", "gr", function()
-					require("snacks.picker").lsp_references()
-				end, "Goto References (Snacks)")
-
 				map("n", "K", vim.lsp.buf.hover, "Hover")
 				map("n", "<C-r>", vim.lsp.buf.rename, "Rename")
 				map("n", "<C-Space>", vim.lsp.buf.code_action, "Code Action")
