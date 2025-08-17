@@ -34,3 +34,11 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", function()
 end, { desc = "Save file and return to normal mode" })
 
 vim.o.swapfile = false
+
+-- Normal mode: move line up/down
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+
+-- Visual mode: move selection up/down
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
