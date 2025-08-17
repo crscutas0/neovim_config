@@ -1,118 +1,74 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "neovim/nvim-lspconfig",
-      "folke/snacks.nvim",
-    },
+	{
+		"williamboman/mason.nvim",
+		build = ":MasonUpdate",
+		opts = {
+			-- ui = { border = "rounded" },
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
 
-    config = function()
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      local lspconfig = require("lspconfig")
+			vim.diagnostic.config({
+				virtual_text = false,
+				signs = true,
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+			})
 
-      require("luasnip.loaders.from_vscode").lazy_load()
+			local function load_config(server)
+				local ok, config = pcall(require, "lsp." .. server)
+				if not ok then
+					vim.notify("No config found for LSP: " .. server, vim.log.levels.WARN)
+					return {}
+				end
+				return config
+			end
 
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local on_attach = function(_, bufnr)
+				local map = function(mode, lhs, rhs, desc)
+					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+				end
 
-      local on_attach = function(client, bufnr)
-        local opts = { noremap = true, silent = true, buffer = bufnr }
+				map("n", "gd", function()
+					require("snacks.picker").lsp_definitions()
+				end, "Goto Definition (Snacks)")
 
-        vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, opts)
-        vim.keymap.set('i', '<C-r>', vim.lsp.buf.rename, opts)
-        vim.keymap.set('n', '<C-Space>', vim.lsp.buf.code_action, opts)
+				map("n", "gr", function()
+					require("snacks.picker").lsp_references()
+				end, "Goto References (Snacks)")
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          callback = function()
-            if client:supports_method("textDocument/formatting") then
-              if vim.lsp.buf.format_async then
-                vim.lsp.buf.format_async()
-              else
-                vim.lsp.buf.format()
-              end
-            end
-          end,
-        })
-      end
+				map("n", "K", vim.lsp.buf.hover, "Hover")
+				map("n", "<C-r>", vim.lsp.buf.rename, "Rename")
+				map("n", "<C-Space>", vim.lsp.buf.code_action, "Code Action")
+				map("n", "<leader>ef", function()
+					vim.lsp.buf.format({ async = true })
+				end, "Format")
+			end
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-          Lua = { diagnostics = { globals = { "vim" } } },
-        },
-      })
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
+			local servers = {
+				"lua_ls",
+				"ts_ls",
+				"pyright",
+				"ruff",
+				"tailwindcss",
+				"djlsp",
+				"html",
+				"jsonls",
+				"gopls",
+			}
 
-      lspconfig.pylsp.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-          pylsp = {
-            plugins = {
-              pylsp_django = { enabled = true },
-              pycodestyle = { enabled = true },
-              mypy = { enabled = true },
-            },
-          },
-        },
-      })
-
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        filetypes = {
-          "html",
-          "css",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "vue",
-          "svelte",
-          "astro",
-          "php",
-        }, -- Supported filetypes for Tailwind
-        -- root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "package.json"),
-      })
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-
-        mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" }, -- Removed invalid duplicates option
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-      })
-    end,
-  }
+			for _, server in ipairs(servers) do
+				local config = load_config(server)
+				config.on_attach = on_attach
+				config.capabilities = capabilities
+				lspconfig[server].setup(config)
+			end
+		end,
+	},
 }
