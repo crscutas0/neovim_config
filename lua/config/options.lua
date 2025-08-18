@@ -56,7 +56,7 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", function()
 end, { desc = "Save file (with optional normal mode)" })
 
 -- toggle mapping
-vim.keymap.set("n", "<leader>nm", function()
+vim.keymap.set("n", "<leader>nw", function()
 	vim.g.save_go_normal = not vim.g.save_go_normal
 	if vim.g.save_go_normal then
 		vim.notify("Save → Normal Mode", vim.log.levels.INFO)
