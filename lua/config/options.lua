@@ -39,6 +39,8 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n", "U", "<Cmd>redo<CR>", { noremap = true, silent = true })
+
 ----- Save configuration
 -- default toggle state
 vim.g.save_go_normal = true

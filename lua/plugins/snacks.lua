@@ -161,7 +161,7 @@ return {
 		{
 			"<leader>ed",
 			function()
-				Snacks.picker.diagnostics()
+				Snacks.picker.diagnostics({ layout = "vertical" })
 			end,
 			desc = "Diagnostics",
 		},
