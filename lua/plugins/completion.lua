@@ -28,7 +28,6 @@ return {
 					border = "rounded",
 					max_width = 50,
 					max_height = 25,
-					zindex = 50,
 				},
 			},
 			menu = { enabled = true },
