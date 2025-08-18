@@ -63,4 +63,4 @@ vim.keymap.set("n", "<leader>nw", function()
 	else
 		vim.notify("Save → Stay in Current Mode", vim.log.levels.INFO)
 	end
-end, { desc = "Save behavior" })
+end, { desc = "Toggle save behavior" })
