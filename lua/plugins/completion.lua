@@ -16,7 +16,12 @@ return {
 
 		-- Sources
 		sources = {
-			default = { "lsp", "path", "buffer", "snippets" },
+			default = {
+				"lsp",
+				"path",
+				-- "buffer", -- get completion suggestion from opened file
+				"snippets",
+			},
 		},
 
 		-- Completion UI
