@@ -19,7 +19,7 @@ return {
 			default = {
 				"lsp",
 				"path",
-				-- "buffer", -- get completion suggestion from opened file
+				"buffer", -- get completion suggestion from opened file
 				"snippets",
 			},
 		},
