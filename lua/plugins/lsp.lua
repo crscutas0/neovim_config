@@ -50,7 +50,7 @@ return {
 				"ruff",
 				"tailwindcss",
 				"djlsp",
-				"html",
+				-- "html",
 				"jsonls",
 				"gopls",
 			}
