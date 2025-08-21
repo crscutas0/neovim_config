@@ -26,7 +26,6 @@ return {
 	},
 	keys = {
 		-- Top Pickers & Explorer
-		-- find
 		{
 			"<leader>fb",
 			function()
@@ -34,13 +33,6 @@ return {
 			end,
 			desc = "Buffers",
 		},
-		-- {
-		-- 	"<leader>fc",
-		-- 	function()
-		-- 		Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-		-- 	end,
-		-- 	desc = "Find Config File",
-		-- },
 		{
 			"<leader>ff",
 			function()
