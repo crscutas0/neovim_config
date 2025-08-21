@@ -26,11 +26,6 @@ return {
 	},
 	keys = {
 		-- Top Pickers & Explorer
-		-- { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-		-- { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
-		-- { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
-		-- { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
-		-- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 		-- find
 		{
 			"<leader>fb",
@@ -96,6 +91,13 @@ return {
 			desc = "Visual selection or word",
 			mode = { "n", "x" },
 		},
+		{
+			"<leader>fs",
+			function()
+				Snacks.picker.smart()
+			end,
+			desc = "Smart Find Files",
+		},
 		-- git
 		{
 			"<leader>gb",
@@ -125,7 +127,6 @@ return {
 			end,
 			desc = "Git Status",
 		},
-		-- { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
 		{
 			"<leader>gd",
 			function()
@@ -141,16 +142,6 @@ return {
 			desc = "Git Log File",
 		},
 		-- Grep
-		-- { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
-		-- { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-		-- { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
-		-- search
-		-- { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
-		-- { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
-		-- { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
-		-- { "<leader>sD", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
-		-- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
-		-- { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
 		{
 			"<leader>ei",
 			function()
@@ -172,13 +163,6 @@ return {
 			end,
 			desc = "Diagnostics",
 		},
-		-- { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
-		-- { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
-		-- { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
-		-- { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
-		-- { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
-		-- { "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
-		-- { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
 		-- LSP
 		{
 			"gd",
@@ -202,7 +186,6 @@ return {
 			nowait = true,
 			desc = "References",
 		},
-		-- { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
 		{
 			"gy",
 			function()
@@ -210,14 +193,6 @@ return {
 			end,
 			desc = "Goto T[y]pe Definition",
 		},
-		-- { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
-		-- { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
-		-- Other
-		-- { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
-		-- { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-		-- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-		-- { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
-		-- { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
 		{
 			"<c-/>",
 			function()
@@ -225,7 +200,6 @@ return {
 			end,
 			desc = "Toggle Terminal",
 		},
-		-- { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
 		{
 			"]]",
 			function()
