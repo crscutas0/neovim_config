@@ -33,7 +33,7 @@ CTRL + t -> Go back from reference
 
 CTRL + s -> (explorer, picker) Split horizontal
 
-CTRL + x -> (explorer, picker) Split vertically
+CTRL + v -> (explorer, picker) Split vertical
 
 CTRL + s -> (n) Save file
 
