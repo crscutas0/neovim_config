@@ -13,6 +13,9 @@ return {
 				filtered_items = {
 					always_show = { ".env", ".gitignore" },
 				},
+				follow_current_file = {
+					enabled = true,
+				},
 			},
 		},
 		keys = {
