@@ -53,6 +53,7 @@ vim.keymap.set("n", "<S-Up>", "<Nop>", {})
 vim.keymap.set("n", "<S-Down>", "<Nop>", {})
 vim.keymap.set("x", "<S-Up>", "<Nop>", {})
 vim.keymap.set("x", "<S-Down>", "<Nop>", {})
+vim.keymap.set("i", "<C-w>", "<Nop>", { noremap = true, silent = true })
 
 ----------- start: save mode
 vim.g.save_go_normal = true
