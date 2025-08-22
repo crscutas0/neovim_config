@@ -39,6 +39,14 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
+-- Remap Shift+Arrow Up and Down to do nothing in normal mode
+vim.keymap.set("n", "<S-Up>", "<Nop>", { desc = "Disable Shift+Up in normal mode" })
+vim.keymap.set("n", "<S-Down>", "<Nop>", { desc = "Disable Shift+Down in normal mode" })
+
+-- Remap Shift+Arrow Up and Down to do nothing in visual mode
+vim.keymap.set("x", "<S-Up>", "<Nop>", { desc = "Disable Shift+Up in visual mode" })
+vim.keymap.set("x", "<S-Down>", "<Nop>", { desc = "Disable Shift+Down in visual mode" })
+
 vim.keymap.set("n", "U", "<Cmd>redo<CR>", { noremap = true, silent = true })
 
 ----- Save configuration
