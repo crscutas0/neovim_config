@@ -1,6 +1,7 @@
--- Basic UI & editing options
+---- vim options
 local opt = vim.opt
 
+-- others
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
@@ -31,24 +32,29 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.o.swapfile = false
 
--- Normal mode: move line up/down
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
-
--- Visual mode: move selection up/down
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<S-Up>", "<Nop>", { desc = "Disable Shift+Up in normal mode" })
-vim.keymap.set("n", "<S-Down>", "<Nop>", { desc = "Disable Shift+Down in normal mode" })
-
-vim.keymap.set("x", "<S-Up>", "<Nop>", { desc = "Disable Shift+Up in visual mode" })
-vim.keymap.set("x", "<S-Down>", "<Nop>", { desc = "Disable Shift+Down in visual mode" })
+vim.keymap.set("n", "U", "<Cmd>redo<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-Up>", "10k", { noremap = true, silent = true, desc = "Move 10 lines up" })
 vim.keymap.set("n", "<A-Down>", "10j", { noremap = true, silent = true, desc = "Move 10 lines down" })
 
-vim.keymap.set("n", "U", "<Cmd>redo<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ml", "J", {
+	noremap = true,
+	silent = true,
+	desc = "Join selected lines with a space",
+})
 
+-- disable keybinds
+vim.keymap.set("n", "J", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Up>", "<Nop>", {})
+vim.keymap.set("n", "<S-Down>", "<Nop>", {})
+vim.keymap.set("x", "<S-Up>", "<Nop>", {})
+vim.keymap.set("x", "<S-Down>", "<Nop>", {})
+
+----------- start: save mode
 vim.g.save_go_normal = true
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", function()
@@ -71,3 +77,4 @@ vim.keymap.set("n", "<leader>nw", function()
 		vim.notify("Save → Stay in Current Mode", vim.log.levels.INFO)
 	end
 end, { desc = "Toggle save behavior" })
+--------- end: save mode
