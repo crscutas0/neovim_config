@@ -9,11 +9,10 @@ return {
 		-- Keymaps
 		keymap = {
 			preset = "default",
+			["<C-Space>"] = { "show", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
-			["<Down>"] = false,
-			["<Up>"] = false,
 		},
 
 		-- Sources
@@ -37,11 +36,22 @@ return {
 					max_height = 25,
 				},
 			},
-			menu = { enabled = true },
+			menu = {
+				enabled = true,
+				auto_show = true,
+			},
 			list = {
 				selection = {
 					preselect = false,
+					auto_insert = false,
 				},
+			},
+			ghost_text = {
+				enabled = true,
+				show_with_selection = true,
+				show_without_selection = true,
+				show_with_menu = true,
+				show_without_menu = true,
 			},
 		},
 
