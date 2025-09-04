@@ -2,9 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
-		opts = {
-			-- ui = { border = "rounded" },
-		},
+		opts = {},
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -28,7 +26,10 @@ return {
 				return config
 			end
 
-			local on_attach = function(_, bufnr)
+			local on_attach = function(client, bufnr)
+				client.server_capabilities.documentHighlightProvider = false
+				client.server_capabilities.semanticTokensProvider = nil
+
 				local map = function(mode, lhs, rhs, desc)
 					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
 				end
