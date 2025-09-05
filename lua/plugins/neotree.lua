@@ -17,12 +17,13 @@ return {
 					enabled = true,
 				},
 			},
+			window = {
+				width = 35,
+			},
 		},
 		keys = {
 			{ "<leader>nt", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
 			{ "<leader>ne", "<cmd>Neotree focus<cr>", desc = "Focus Neo-tree" },
-			-- { "<leader>s", "<cmd>Neotree show<cr>",  desc = "Show Neo-tree (no focus)" },
-			-- { "<leader>c", "<cmd>Neotree close<cr>", desc = "Close Neo-tree" },
 		},
 	},
 }

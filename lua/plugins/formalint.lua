@@ -18,7 +18,6 @@ return {
 			},
 		},
 	},
-
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
@@ -26,6 +25,7 @@ return {
 				javascript = { "eslint_d" },
 				javascriptreact = { "eslint_d" },
 				typescript = { "eslint_d" },
+				json = { "jsonlint" },
 				typescriptreact = { "eslint_d" },
 			}
 
