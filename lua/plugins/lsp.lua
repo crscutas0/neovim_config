@@ -27,8 +27,8 @@ return {
 			end
 
 			local on_attach = function(client, bufnr)
-				client.server_capabilities.documentHighlightProvider = false
-				client.server_capabilities.semanticTokensProvider = nil
+				-- client.server_capabilities.documentHighlightProvider = false
+				-- client.server_capabilities.semanticTokensProvider = nil
 
 				local map = function(mode, lhs, rhs, desc)
 					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })

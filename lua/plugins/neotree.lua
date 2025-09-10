@@ -5,13 +5,16 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-web-devicons", -- optional, but recommended
+			"nvim-tree/nvim-web-devicons",
 		},
 		lazy = false,
 		opts = {
 			filesystem = {
 				filtered_items = {
 					always_show = { ".env", ".gitignore" },
+					always_show_by_pattern = {
+						".env*",
+					},
 				},
 				follow_current_file = {
 					enabled = true,
