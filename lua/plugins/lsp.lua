@@ -54,6 +54,7 @@ return {
 				-- "html",
 				"jsonls",
 				"gopls",
+				"svelte",
 			}
 
 			for _, server in ipairs(servers) do

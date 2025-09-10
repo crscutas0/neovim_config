@@ -15,6 +15,7 @@ return {
 					"css",
 					"markdown",
 					"json",
+					"svelte",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },
