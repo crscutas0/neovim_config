@@ -10,10 +10,7 @@ return {
 		svelte = {
 			plugin = {
 				svelte = {
-					compilerWarnings = {
-						-- Example: turn a warning into an error or ignore it
-						-- "unused-export-let" = "ignore",
-					},
+					compilerWarnings = {},
 				},
 				css = {
 					validate = true,

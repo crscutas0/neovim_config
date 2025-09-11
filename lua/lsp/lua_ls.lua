@@ -7,6 +7,7 @@ return {
 			runtime = { version = "LuaJIT" },
 			diagnostics = { globals = { "vim" } },
 			workspace = { checkThirdParty = false },
+			hint = { enabled = true },
 		},
 	},
 }
