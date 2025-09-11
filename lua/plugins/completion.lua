@@ -7,13 +7,7 @@ return {
 	},
 	opts = {
 		-- Keymaps
-		keymap = {
-			preset = "default",
-			["<C-Space>"] = { "show", "fallback" },
-			["<Tab>"] = { "select_next", "fallback" },
-			["<S-Tab>"] = { "select_prev", "fallback" },
-			["<CR>"] = { "accept", "fallback" },
-		},
+		keymap = require("config.keymap.completion"),
 
 		-- Sources
 		sources = {

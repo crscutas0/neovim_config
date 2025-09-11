@@ -21,12 +21,9 @@ return {
 				},
 			},
 			window = {
-				width = 35,
+				width = 40,
 			},
 		},
-		keys = {
-			{ "<leader>nt", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
-			{ "<leader>ne", "<cmd>Neotree focus<cr>", desc = "Focus Neo-tree" },
-		},
+		keys = require("config.keymap.neotree"),
 	},
 }

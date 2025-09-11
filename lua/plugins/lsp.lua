@@ -26,22 +26,7 @@ return {
 				return config
 			end
 
-			local on_attach = function(client, bufnr)
-				-- client.server_capabilities.documentHighlightProvider = false
-				-- client.server_capabilities.semanticTokensProvider = nil
-
-				local map = function(mode, lhs, rhs, desc)
-					vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
-				end
-
-				map("n", "K", vim.lsp.buf.hover, "Hover")
-				map("n", "<C-r>", vim.lsp.buf.rename, "Rename")
-				map("n", "<C-Space>", vim.lsp.buf.code_action, "Code Action")
-				map("n", "<leader>ef", function()
-					vim.lsp.buf.format({ async = true })
-				end, "Format")
-			end
-
+			local on_attach = require("config.keymap.lsp")
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 			local servers = {
