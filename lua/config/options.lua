@@ -24,7 +24,7 @@ opt.smartindent = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
-opt.hlsearch = false
+opt.hlsearch = true
 
 -- Scrolling
 opt.scrolloff = 8
