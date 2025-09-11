@@ -12,6 +12,7 @@ opt.linebreak = true
 opt.breakindent = true
 opt.signcolumn = "yes"
 opt.termguicolors = true
+opt.clipboard = "unnamedplus"
 
 -- Indentation
 opt.expandtab = true
