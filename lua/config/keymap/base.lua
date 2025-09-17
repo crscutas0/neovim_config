@@ -29,6 +29,7 @@ vim.keymap.set("i", "<C-w>", "<Nop>", { noremap = true, silent = true })
 
 -- Others
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })
+vim.keymap.set("n", "<C-q>1", "<Cmd>qa<CR>", { desc = "Exit Neovim" })
 
 ----------- start: save mode
 vim.g.save_go_normal = true
