@@ -4,7 +4,8 @@
 -- After changing execute :source
 
 --- catppuccin
---- nordic
+--- rose-pine-[main,moon,dawn]
+--- tokyonight-[night, storm, day, moon]
 --- everforest
 --- onedark
 

@@ -16,22 +16,36 @@ return {
 		end,
 	},
 	{
-		"AlexvZyl/nordic.nvim",
+		"rose-pine/neovim",
+		name = "rose-pine",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("nordic").setup({
-				cursorline = {
+			require("rose-pine").setup({
+				variant = "main", -- auto, main, moon, or dawn
+				-- dark_variant = "main",
+				dim_inactive_windows = false,
+				extend_background_behind_borders = true,
+
+				enable = {
+					terminal = true,
+					legacy_highlights = true,
+					migrations = true,
+				},
+
+				styles = {
 					bold = true,
-					bold_number = true,
-					theme = "dark",
-					blend = 0.85,
+					italic = true,
+					transparency = false,
 				},
 			})
-			vim.defer_fn(function()
-				vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffbf00", bold = true })
-			end, 50)
 		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 	{
 		"neanias/everforest-nvim",

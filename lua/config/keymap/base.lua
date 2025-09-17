@@ -28,7 +28,6 @@ vim.keymap.set("i", "<S-Down>", "<Nop>", {})
 vim.keymap.set("i", "<C-w>", "<Nop>", { noremap = true, silent = true })
 
 -- Others
-vim.keymap.set("n", "<C-e>", "<cmd>Neotree focus<cr>", { desc = "Focus Neo-tree" })
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })
 
 ----------- start: save mode
