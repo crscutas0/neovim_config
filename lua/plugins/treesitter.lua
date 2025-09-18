@@ -12,6 +12,7 @@ return {
 					"typescript",
 					"tsx",
 					"html",
+					"htmldjango",
 					"css",
 					"markdown",
 					"json",

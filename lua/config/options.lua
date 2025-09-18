@@ -38,6 +38,8 @@ vim.lsp.enable({
 	"ts_ls",
 	"pyright",
 	"ruff",
+	-- "html",
+	-- "htmx",
 	"tailwindcss",
 	"djlsp",
 	"json",

@@ -9,7 +9,7 @@ return {
 				return {
 					Search = { fg = "#c25622" },
 					LineNr = { fg = "#454545" },
-					CursorLineNr = { fg = "#8FA3A0", fmt = "bold" },
+					CursorLineNr = { fg = "#8FA3A0", bold = true },
 				}
 			end,
 		},
@@ -76,6 +76,7 @@ return {
 					Search = { fg = "#c25622" },
 					LineNr = { fg = "#454545" },
 					CursorLineNr = { fg = "#8FA3A0", fmt = "bold" },
+					["@tag"] = { fg = "#de5d68" },
 				},
 			})
 			require("onedark")
