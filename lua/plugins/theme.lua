@@ -7,7 +7,9 @@ return {
 			flavour = "frappe",
 			custom_highlights = function()
 				return {
-					CursorLineNr = { fg = "#ffbf00", bold = true },
+					Search = { fg = "#c25622" },
+					LineNr = { fg = "#454545" },
+					CursorLineNr = { fg = "#8FA3A0", fmt = "bold" },
 				}
 			end,
 		},
@@ -71,6 +73,7 @@ return {
 				style = "warm",
 				colors = {},
 				highlights = {
+					Search = { fg = "#c25622" },
 					LineNr = { fg = "#454545" },
 					CursorLineNr = { fg = "#8FA3A0", fmt = "bold" },
 				},
