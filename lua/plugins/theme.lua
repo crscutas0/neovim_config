@@ -71,7 +71,8 @@ return {
 				style = "warm",
 				colors = {},
 				highlights = {
-					CursorLineNr = { fg = "#ffbf00", fmt = "bold" },
+					LineNr = { fg = "#454545" },
+					CursorLineNr = { fg = "#8FA3A0", fmt = "bold" },
 				},
 			})
 			require("onedark")

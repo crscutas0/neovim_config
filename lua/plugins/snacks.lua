@@ -21,6 +21,9 @@ return {
 			enabled = true,
 			timeout = 3000,
 		},
+		scratch = {
+			ft = "markdown",
+		},
 	},
 	keys = require("config.keymap.snacks"),
 	init = require("config.keymap.snacks2"),
