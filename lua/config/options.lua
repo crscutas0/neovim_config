@@ -31,3 +31,18 @@ opt.scrolloff = 8
 opt.sidescrolloff = 8
 
 vim.o.swapfile = false
+
+-- LSP
+vim.lsp.enable({
+	"lua_ls",
+	"ts_ls",
+	"pyright",
+	"ruff",
+	"tailwindcss",
+	"djlsp",
+	"json",
+	"gopls",
+	"svelte",
+})
+
+vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
