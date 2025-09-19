@@ -29,7 +29,13 @@ return {
 								return "Explorer"
 							end,
 						},
-						lualine_b = {},
+						lualine_b = {
+							function()
+								local path = vim.b.neo_tree_source_state and vim.b.neo_tree_source_state.path
+									or vim.fn.getcwd()
+								return vim.fn.fnamemodify(path, ":t")
+							end,
+						},
 						lualine_c = {},
 						lualine_x = {},
 						lualine_y = {},
