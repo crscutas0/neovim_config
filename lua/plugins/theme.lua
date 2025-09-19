@@ -71,7 +71,10 @@ return {
 		config = function()
 			require("onedark").setup({
 				style = "warm",
-				colors = {},
+				colors = {
+					purple = "#875896",
+					green = "#5b704c",
+				},
 				highlights = {
 					Search = { fg = "#c25622" },
 					LineNr = { fg = "#454545" },
