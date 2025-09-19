@@ -13,7 +13,7 @@ return {
 				lua = { "stylua" },
 			},
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 100,
 				lsp_format = "fallback",
 			},
 		},
