@@ -11,9 +11,17 @@ return {
 					if not vim.api.nvim_buf_is_valid(scope.buf_id) then
 						return false
 					end
-					if vim.bo[scope.buf_id].filetype == "neo-tree" then
+
+					local excluded = {
+						["neo-tree"] = true,
+						["mason"] = true,
+						["lazy"] = true,
+					}
+
+					if excluded[vim.bo[scope.buf_id].filetype] then
 						return false
 					end
+
 					return not scope.body.is_incomplete
 				end,
 				priority = 2,
