@@ -17,6 +17,7 @@ return {
 					"markdown",
 					"json",
 					"svelte",
+					"sql",
 				},
 				highlight = { enable = true },
 				indent = { enable = true },

@@ -16,6 +16,7 @@ return {
 						["neo-tree"] = true,
 						["mason"] = true,
 						["lazy"] = true,
+						["dbui"] = true,
 					}
 
 					if excluded[vim.bo[scope.buf_id].filetype] then

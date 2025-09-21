@@ -14,6 +14,10 @@ return {
 			default = { "lsp", "path", "buffer", "snippets" },
 			per_filetype = {
 				text = { "buffer", "path" },
+				sql = { "snippets", "dadbod", "buffer" },
+			},
+			providers = {
+				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 			},
 		},
 
@@ -28,16 +32,19 @@ return {
 					max_height = 25,
 				},
 			},
+
 			menu = {
 				enabled = true,
 				auto_show = true,
 			},
+
 			list = {
 				selection = {
 					preselect = false,
 					auto_insert = false,
 				},
 			},
+
 			ghost_text = {
 				enabled = true,
 				show_with_selection = true,

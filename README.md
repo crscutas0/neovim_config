@@ -1,44 +1,81 @@
-# crscutas neovim configuration
+# Neovim Configuration
 
-## Plugins
-- LazyVim (Plugin Manager)
-- Snacks
-- Neotree
-- TreeSitter
-- Blink.cmp
-- Mason
-- Catppuccin (Colors)
-- Whichkey
-- Undotree
-- Autopair
+Neovim v0.11
 
 ## Installation
-```
+
+```sh
 git clone https://github.com/crscutas0/neovim_config.git ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 rm  ~/config/nvim/README.md
 ```
-## Keymaps
 
-leader -> `<spacebar>`
+## Plugins
+Packages are usually automatically installed. To ensure plugins are up to date use `:Lazy update`. 
 
-Whichkey plugin should give you hints what are the available keybinds. Pressing leader should display the hint dialogue.
+| Plugin | Purpose |
+| -------------- | --------------- |
+| [Mason](https://github.com/mason-org/mason.nvim) | Installs language related packages |
+| [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Syntax highlighter |
+| [Whichkey](https://github.com/folke/which-key.nvim) | Keybind helper |
+| [NeoTree](https://github.com/nvim-neo-tree/neo-tree.nvim) | File explorer |
+| [LuaLine](https://github.com/nvim-lualine/lualine.nvim) | Bottom editor statusline |
+| [BufferLine](https://github.com/akinsho/bufferline.nvim) | Tabbing |
+| [Snacks](https://github.com/folke/snacks.nvim) | Editor collection of features |
+| [Undotree](https://github.com/mbbill/undotree) | Save undo history to file |
+| [MiniIndent](https://github.com/nvim-mini/mini.indentscope) | Scope indicator |
+| [Surround](https://github.com/kylechui/nvim-surround) | Surround text with `"[{(` |
+| [Autopair](https://github.com/windwp/nvim-autopairs) | Auto pair when keys `"[{(` |
+| [Conform](https://github.com/stevearc/conform.nvim) | Formatting |
+| [nvim-lint](https://github.com/mfussenegger/nvim-lint) | Linting |
+| [BlinkCmp](https://github.com/Saghen/blink.cmp) | Auto Completion |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Code Snippets |
+| [FriendlySnippets](https://github.com/rafamadriz/friendly-snippets) | Code Snippets |
+| [dadbod](https://github.com/kristijanhusak/vim-dadbod-ui) | SQL stuff |
 
-#### CTRL and Shift Keybinds
-CTRL + r -> (LSP) Rename variable
+#### Themes
+- catpuccin
+- onedark
+- tokyonight
+- everforest
+- rose-pine 
 
-CTRL + space -> Code action
+See `lua/config/colors.lua` for theme 
 
-CTRL + t -> Go back from reference
+## LSP
+Use `:Mason` to install the following packages. Packages that are not needed does not need to be installed. Check the following files to remove unused packages `lsp/`, `lua/packages/conform_lint.lua`, `lua/config/options.lua`
 
-CTRL + s -> (explorer, picker) Split horizontal
+- django-template-lsp
+- eslint_d
+- gopls
+- html-lsp
+- json-lsp
+- jsonlint
+- lua-language-server
+- prettierd
+- pyright
+- python-lsp-server
+- reorder-python-imports
+- ruff
+- shfmt
+- stylua
+- svelte-language-server
+- tailwindcss-language-server
+- typescript-language-server
 
-CTRL + v -> (explorer, picker) Split vertical
+## Keybinds
 
-CTRL + s -> (n) Save file
+There are a couple of keybinds to mention, this section will only mention most used and not defined in `lua/config/keymaps`.
 
-CTRL + ww -> (n) Move to different buffers
+**Note:**
+- Think of _buffers_ as an open window. Explorer is a buffer, tabs are different buffers. _Active Buffers_ currently shown in the screen, usually the file explorer and the editor.
 
-Shift + [hl] -> tab left and right
+| Mode | Keybind | Description |
+| -------------- | --------------- |
+| Normal | Ctrl + ww | Switch to different active buffers |
+| Normal | Shift + [h,l] | Switch tabs |
+| Normal | Ctrl + z | Minimizes nvim, you can type `fg` to maximize it. |
 
-Shift + [x] -> close other tabs
+## Versions
+
+**master** branch will only be updated when a fix is necessary.

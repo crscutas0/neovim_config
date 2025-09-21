@@ -5,6 +5,13 @@ return {
 		priority = 1000,
 		opts = {
 			flavour = "frappe",
+			color_overrides = {
+				frappe = {
+					base = "#2c2d30",
+					mantle = "#35373b",
+					crust = "#3e4045",
+				},
+			},
 			custom_highlights = function()
 				return {
 					Search = { fg = "#c25622" },

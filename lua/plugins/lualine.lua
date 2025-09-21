@@ -43,6 +43,21 @@ return {
 					},
 					filetypes = { "neo-tree" },
 				},
+				{
+					sections = {
+						lualine_a = {
+							function()
+								return "SQL"
+							end,
+						},
+						lualine_b = {},
+						lualine_c = {},
+						lualine_x = {},
+						lualine_y = {},
+						lualine_z = {},
+					},
+					filetypes = { "dbui" },
+				},
 			},
 		})
 	end,
