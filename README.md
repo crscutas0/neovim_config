@@ -71,7 +71,7 @@ There are a couple of keybinds to mention, this section will only mention most u
 - Think of _buffers_ as an open window. Explorer is a buffer, tabs are different buffers. _Active Buffers_ currently shown in the screen, usually the file explorer and the editor.
 
 | Mode | Keybind | Description |
-| -------------- | --------------- |
+| -------------- | ---------------- |-------------- |
 | Normal | Ctrl + ww | Switch to different active buffers |
 | Normal | Shift + [h,l] | Switch tabs |
 | Normal | Ctrl + z | Minimizes nvim, you can type `fg` to maximize it. |
