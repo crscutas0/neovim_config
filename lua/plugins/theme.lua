@@ -57,7 +57,6 @@ return {
 					["@tag"] = { fg = "#de5d68" },
 				},
 			})
-			require("onedark")
 		end,
 	},
 }

@@ -6,10 +6,20 @@ return {
 		"rafamadriz/friendly-snippets",
 	},
 	opts = {
-		-- Keymaps
 		keymap = require("config.keymap.completion"),
 
-		-- Sources
+		signature = {
+			enabled = true,
+			trigger = {
+				enabled = false,
+			},
+			window = {
+				treesitter_highlighting = true,
+				show_documentation = false,
+				direction_priority = { "s", "n" },
+			},
+		},
+
 		sources = {
 			default = { "lsp", "path", "buffer", "snippets" },
 			per_filetype = {
@@ -21,7 +31,6 @@ return {
 			},
 		},
 
-		-- Completion UI
 		completion = {
 			documentation = {
 				auto_show = true,
