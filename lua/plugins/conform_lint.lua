@@ -11,6 +11,7 @@ return {
 				css = { "prettierd" },
 				html = { "prettierd" },
 				lua = { "stylua" },
+				python = { "ruff_format", "reorder-python-imports" },
 			},
 			format_on_save = {
 				timeout_ms = 100,
@@ -27,6 +28,7 @@ return {
 				typescript = { "eslint_d" },
 				json = { "jsonlint" },
 				typescriptreact = { "eslint_d" },
+				python = { "ruff" },
 			}
 
 			-- Run linting automatically on save
