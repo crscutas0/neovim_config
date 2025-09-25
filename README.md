@@ -46,6 +46,9 @@ See `lua/config/colors.lua` for theme
 Use `:Mason` to install the following packages. Packages that are not needed does not need to be installed. Check the following files to remove unused packages `lsp/`, `lua/packages/conform_lint.lua`, `lua/config/options.lua`
 
 - django-template-lsp
+- reorder-python-imports
+- pylsp
+- yapf
 - eslint_d
 - gopls
 - html-lsp
@@ -53,9 +56,6 @@ Use `:Mason` to install the following packages. Packages that are not needed doe
 - jsonlint
 - lua-language-server
 - prettierd
-- pyright
-- python-lsp-server
-- reorder-python-imports
 - ruff
 - shfmt
 - stylua
