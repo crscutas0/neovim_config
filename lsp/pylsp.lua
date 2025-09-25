@@ -5,8 +5,8 @@ return {
 	settings = {
 		pylsp = {
 			plugins = {
+				pyflakes = { enabled = true },
 				rope_autoimport = { enabled = true },
-				rope_completion = { enabled = true },
 			},
 		},
 	},
