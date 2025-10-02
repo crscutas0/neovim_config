@@ -28,13 +28,14 @@ vim.keymap.set("i", "<S-Down>", "<Nop>", {})
 vim.keymap.set("i", "<C-w>", "<Nop>", { noremap = true, silent = true })
 
 -- LSP
-
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 vim.keymap.set("n", "<C-r>", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "<leader>ef", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format" })
+
+vim.keymap.set("n", "<Tab>", "e", { noremap = true, silent = true })
 
 -- Others
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })
@@ -64,3 +65,6 @@ vim.keymap.set("n", "<leader>nw", function()
 	end
 end, { desc = "Toggle save behavior" })
 --------- end: save mode
+
+--- Quick Search
+vim.keymap.set("x", "n", '"xy/<C-r>x<CR>', { noremap = true })

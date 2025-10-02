@@ -1,3 +1,7 @@
+if true then
+	return {}
+end
+
 return {
 	"saghen/blink.cmp",
 	version = "*",
@@ -7,7 +11,6 @@ return {
 	},
 	opts = {
 		keymap = require("config.keymap.completion"),
-
 		signature = {
 			enabled = true,
 			trigger = {

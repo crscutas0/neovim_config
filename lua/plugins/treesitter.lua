@@ -10,6 +10,7 @@ return {
 					"go",
 					"python",
 					"typescript",
+					"javascript",
 					"tsx",
 					"html",
 					"htmldjango",
