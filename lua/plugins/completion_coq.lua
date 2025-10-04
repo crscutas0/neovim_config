@@ -1,3 +1,7 @@
+if true then
+	return {}
+end
+
 return {
 	{
 		"ms-jpq/coq_nvim",

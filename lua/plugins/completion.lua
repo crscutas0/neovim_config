@@ -1,7 +1,3 @@
-if true then
-	return {}
-end
-
 return {
 	"saghen/blink.cmp",
 	version = "*",
@@ -24,7 +20,7 @@ return {
 		},
 
 		sources = {
-			default = { "lsp", "path", "buffer", "snippets" },
+			default = { "lsp", "buffer", "path", "snippets" },
 			per_filetype = {
 				text = { "buffer", "path" },
 				sql = { "snippets", "dadbod", "buffer" },
@@ -37,7 +33,7 @@ return {
 		completion = {
 			documentation = {
 				auto_show = true,
-				auto_show_delay_ms = 150,
+				auto_show_delay_ms = 100,
 				window = {
 					border = "rounded",
 					max_width = 50,
