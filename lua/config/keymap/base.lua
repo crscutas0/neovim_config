@@ -35,11 +35,10 @@ vim.keymap.set("n", "<leader>ef", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format" })
 
-vim.keymap.set("n", "<Tab>", "e", { noremap = true, silent = true })
-
 -- Others
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })
 vim.keymap.set("n", "<C-q>1", "<Cmd>qa<CR>", { desc = "Exit Neovim" })
+vim.keymap.set("n", "<Tab>", "e", { noremap = true, silent = true })
 
 ----------- start: save mode
 vim.g.save_go_normal = true

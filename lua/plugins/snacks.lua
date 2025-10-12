@@ -8,10 +8,11 @@ return {
 		explorer = { enabled = false },
 		indent = { enabled = false },
 		input = { enabled = true },
+		rename = { enabled = true },
 		picker = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
-		scroll = { enabled = true },
+		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		styles = {
