@@ -39,6 +39,9 @@ end, { desc = "Format" })
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })
 vim.keymap.set("n", "<C-q>1", "<Cmd>qa<CR>", { desc = "Exit Neovim" })
 vim.keymap.set("n", "<Tab>", "e", { noremap = true, silent = true })
+vim.keymap.set("n", "<F2>", "0", { noremap = true, silent = true, desc = "Go to line start" })
+vim.keymap.set("n", "<F3>", "^", { noremap = true, silent = true, desc = "Go to first non-blank" })
+vim.keymap.set("n", "<F4>", "$", { noremap = true, silent = true, desc = "Go to line end" })
 
 ----------- start: save mode
 vim.g.save_go_normal = true

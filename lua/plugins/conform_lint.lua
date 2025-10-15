@@ -4,9 +4,9 @@ return {
 		opts = {
 			formatters_by_ft = {
 				javascript = { "prettierd" },
-				javascriptreact = { "prettierd" }, -- add rustywind in the future
+				javascriptreact = { "prettierd", "rustywind" }, -- add rustywind in the future
 				typescript = { "prettierd" },
-				typescriptreact = { "prettierd" }, -- add rustywind in the future
+				typescriptreact = { "prettierd", "rustywind" }, -- add rustywind in the future
 				json = { "prettierd" },
 				css = { "prettierd" },
 				html = { "biome" },
