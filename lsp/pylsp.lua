@@ -5,7 +5,10 @@ return {
 	settings = {
 		pylsp = {
 			plugins = {
-				pyflakes = { enabled = true },
+				rope_completion = { enabled = true },
+				rope_rename = { enabled = true },
+				rope = { enabled = true },
+				pylsp_code_actions = { enabled = true },
 				rope_autoimport = { enabled = true },
 			},
 		},

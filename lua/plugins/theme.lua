@@ -25,38 +25,6 @@ return {
 		end,
 	},
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("rose-pine").setup({
-				variant = "main", -- auto, main, moon, or dawn
-				-- dark_variant = "main",
-				dim_inactive_windows = false,
-				extend_background_behind_borders = true,
-
-				enable = {
-					terminal = true,
-					legacy_highlights = true,
-					migrations = true,
-				},
-
-				styles = {
-					bold = true,
-					italic = true,
-					transparency = false,
-				},
-			})
-		end,
-	},
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
 		"neanias/everforest-nvim",
 		version = false,
 		lazy = false,
@@ -66,8 +34,8 @@ return {
 			require("everforest").setup({
 				background = "soft",
 				on_highlights = function(highlights, _)
-					highlights.LineNr = { fg = "#ffbf00", bold = true }
-					highlights.CursorLineNr = { fg = "#ffbf00", bold = true }
+					highlights.LineNr = { fg = "#454545", bold = true }
+					highlights.CursorLineNr = { fg = "#8FA3A0", bold = true }
 				end,
 			})
 		end,
@@ -89,7 +57,6 @@ return {
 					["@tag"] = { fg = "#de5d68" },
 				},
 			})
-			require("onedark")
 		end,
 	},
 }

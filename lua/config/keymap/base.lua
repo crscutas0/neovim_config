@@ -28,7 +28,6 @@ vim.keymap.set("i", "<S-Down>", "<Nop>", {})
 vim.keymap.set("i", "<C-w>", "<Nop>", { noremap = true, silent = true })
 
 -- LSP
-
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 vim.keymap.set("n", "<C-r>", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, { desc = "Code Action" })
@@ -39,6 +38,13 @@ end, { desc = "Format" })
 -- Others
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })
 vim.keymap.set("n", "<C-q>1", "<Cmd>qa<CR>", { desc = "Exit Neovim" })
+vim.keymap.set("n", "<Tab>", "e", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", "b", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-w>", "b", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-e>", "b", { noremap = true, silent = true })
+vim.keymap.set("n", "<F2>", "0", { noremap = true, silent = true, desc = "Go to line start" })
+vim.keymap.set("n", "<F3>", "^", { noremap = true, silent = true, desc = "Go to first non-blank" })
+vim.keymap.set("n", "<F4>", "$", { noremap = true, silent = true, desc = "Go to line end" })
 
 ----------- start: save mode
 vim.g.save_go_normal = true
@@ -64,3 +70,6 @@ vim.keymap.set("n", "<leader>nw", function()
 	end
 end, { desc = "Toggle save behavior" })
 --------- end: save mode
+
+--- Quick Search
+vim.keymap.set("x", "n", '"xy/<C-r>x<CR>', { noremap = true })

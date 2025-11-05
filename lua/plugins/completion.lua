@@ -6,12 +6,21 @@ return {
 		"rafamadriz/friendly-snippets",
 	},
 	opts = {
-		-- Keymaps
 		keymap = require("config.keymap.completion"),
+		signature = {
+			enabled = true,
+			trigger = {
+				enabled = false,
+			},
+			window = {
+				treesitter_highlighting = true,
+				show_documentation = false,
+				direction_priority = { "s", "n" },
+			},
+		},
 
-		-- Sources
 		sources = {
-			default = { "lsp", "path", "buffer", "snippets" },
+			default = { "lsp", "buffer", "path", "snippets" },
 			per_filetype = {
 				text = { "buffer", "path" },
 				sql = { "snippets", "dadbod", "buffer" },
@@ -21,11 +30,10 @@ return {
 			},
 		},
 
-		-- Completion UI
 		completion = {
 			documentation = {
 				auto_show = true,
-				auto_show_delay_ms = 150,
+				auto_show_delay_ms = 100,
 				window = {
 					border = "rounded",
 					max_width = 50,

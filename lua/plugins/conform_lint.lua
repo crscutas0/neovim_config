@@ -4,14 +4,15 @@ return {
 		opts = {
 			formatters_by_ft = {
 				javascript = { "prettierd" },
-				javascriptreact = { "prettierd" },
+				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescript = { "prettierd" },
-				typescriptreact = { "prettierd" },
+				typescriptreact = { "prettierd" }, -- add rustywind in the future
 				json = { "prettierd" },
 				css = { "prettierd" },
-				html = { "prettierd" },
+				html = { "biome" },
+				htmldjango = { "biome" },
 				lua = { "stylua" },
-				python = { "yapf", "reorder-python-imports" },
+				python = { "black", "reorder-python-imports" },
 			},
 			format_on_save = {
 				timeout_ms = 3000,
@@ -22,12 +23,25 @@ return {
 	{
 		"mfussenegger/nvim-lint",
 		config = function()
-			require("lint").linters_by_ft = {
-				javascript = { "eslint_d" },
-				javascriptreact = { "eslint_d" },
-				typescript = { "eslint_d" },
+			local lint = require("lint")
+
+			lint.linters.biome = {
+				cmd = "biome",
+				stdin = false,
+				args = { "lint", "--formatter", "compact", "--no-errors-on-unmatched" },
+				ignore_exitcode = true,
+				parser = require("lint.parser").from_errorformat("%f:%l:%c %m", {
+					source = "biome",
+				}),
+			}
+
+			lint.linters_by_ft = {
+				javascript = { "biome" },
+				javascriptreact = { "biome" },
+				typescript = { "biome" },
 				json = { "jsonlint" },
-				typescriptreact = { "eslint_d" },
+				typescriptreact = { "biome" },
+				python = { "flake8" },
 			}
 
 			-- Run linting automatically on save

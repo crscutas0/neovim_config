@@ -7,13 +7,16 @@ return {
 				svelte = {
 					compilerWarnings = {},
 				},
-				css = {
-					validate = true,
-				},
+				-- css = {
+				-- 	validate = true,
+				-- },
 				typescript = {
 					validate = true,
 				},
 			},
+		},
+		flags = {
+			debounce_text_changes = 150,
 		},
 	},
 }
