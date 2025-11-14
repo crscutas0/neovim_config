@@ -5,7 +5,7 @@ return {
 			keymaps = {
 				accept_suggestion = "<C-a>",
 				clear_suggestion = "<C-x>",
-				accept_word = "<C-Down>",
+				accept_word = "<C-d>",
 			},
 			ignore_filetypes = { "markdown" },
 			color = {
