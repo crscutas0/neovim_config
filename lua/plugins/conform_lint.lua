@@ -9,8 +9,8 @@ return {
 				typescriptreact = { "prettierd" }, -- add rustywind in the future
 				json = { "prettierd" },
 				css = { "prettierd" },
-				html = { "biome" },
-				htmldjango = { "biome" },
+				html = { "prettierd" },
+				toml = { "tombi" },
 				lua = { "stylua" },
 				python = { "black", "reorder-python-imports" },
 			},
@@ -42,6 +42,7 @@ return {
 				json = { "jsonlint" },
 				typescriptreact = { "biome" },
 				python = { "flake8" },
+				html = { "htmlhint" },
 			}
 
 			-- Run linting automatically on save
