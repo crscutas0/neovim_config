@@ -7,7 +7,7 @@ return {
 				clear_suggestion = "<C-x>",
 				accept_word = "<C-d>",
 			},
-			ignore_filetypes = { "markdown" },
+			ignore_filetypes = { "markdown", "neo-tree" },
 			color = {
 				-- suggestion_color = "#ffffff",
 				-- cterm = 244,
