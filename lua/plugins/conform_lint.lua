@@ -10,13 +10,22 @@ return {
 				json = { "prettierd" },
 				css = { "prettierd" },
 				html = { "prettierd" },
+				htmldjango = { "djlint" },
 				toml = { "tombi" },
 				lua = { "stylua" },
 				python = { "black", "reorder-python-imports" },
 			},
+
+			default_format_opts = {
+				lsp_format = "fallback",
+			},
 			format_on_save = {
 				timeout_ms = 3000,
-				lsp_format = "fallback",
+			},
+			formatters = {
+				djlint = {
+					prepend_args = { "--indent", "2" },
+				},
 			},
 		},
 	},
