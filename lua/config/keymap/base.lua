@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>ml", "J", {
 	desc = "Join selected lines with a space",
 })
 
+-- keeps original clipboard after overriding highlighted text
+vim.keymap.set("x", "p", "pgvy", { noremap = true })
+
 -- disable keybinds
 vim.keymap.set("n", "J", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Up>", "<Nop>", {})
