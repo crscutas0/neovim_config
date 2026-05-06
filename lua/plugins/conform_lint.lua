@@ -7,6 +7,7 @@ return {
 				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" }, -- add rustywind in the future
+				svelte = { "biome" },
 				json = { "prettierd" },
 				css = { "prettierd" },
 				html = { "prettierd" },
