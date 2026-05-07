@@ -32,4 +32,4 @@ opt.sidescrolloff = 8
 
 vim.o.swapfile = false
 
-vim.lsp.enable({ "stylua", "vtsls", "bashls", "biome", "tailwindcss" })
+vim.lsp.enable({ "lua_ls", "vtsls", "bashls", "biome", "tailwindcss", "svelte", "gopls" })
