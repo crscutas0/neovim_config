@@ -16,8 +16,6 @@ return {
 				"zsh",
 				"python",
 				"htmldjango",
-				"javascript",
-				"zig",
 			})
 		end,
 	},
