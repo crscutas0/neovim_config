@@ -7,16 +7,26 @@ return {
 				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" }, -- add rustywind in the future
+				svelte = { "biome" },
 				json = { "prettierd" },
 				css = { "prettierd" },
-				html = { "biome" },
-				htmldjango = { "biome" },
+				html = { "prettierd" },
+				htmldjango = { "djlint" },
+				toml = { "tombi" },
 				lua = { "stylua" },
 				python = { "black", "reorder-python-imports" },
 			},
+
+			default_format_opts = {
+				lsp_format = "fallback",
+			},
 			format_on_save = {
 				timeout_ms = 3000,
-				lsp_format = "fallback",
+			},
+			formatters = {
+				djlint = {
+					prepend_args = { "--indent", "2" },
+				},
 			},
 		},
 	},
@@ -42,6 +52,7 @@ return {
 				json = { "jsonlint" },
 				typescriptreact = { "biome" },
 				python = { "flake8" },
+				html = { "htmlhint" },
 			}
 
 			-- Run linting automatically on save

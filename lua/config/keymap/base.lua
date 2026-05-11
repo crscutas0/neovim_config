@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>ml", "J", {
 	desc = "Join selected lines with a space",
 })
 
+-- keeps original clipboard after overriding highlighted text
+vim.keymap.set("x", "p", "pgvy", { noremap = true })
+
 -- disable keybinds
 vim.keymap.set("n", "J", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Up>", "<Nop>", {})
@@ -34,6 +37,7 @@ vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, { desc = "Code Action"
 vim.keymap.set("n", "<leader>ef", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "Format" })
+vim.keymap.set("n", "ed", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
 
 -- Others
 vim.keymap.set("n", "<leader>no", "<Cmd>noh<CR>", { desc = "Turn off search highlight" })

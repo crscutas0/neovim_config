@@ -1,52 +1,22 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"java",
-					"lua",
-					"go",
-					"python",
-					"typescript",
-					"javascript",
-					"tsx",
-					"html",
-					"htmldjango",
-					"css",
-					"markdown",
-					"json",
-					"svelte",
-					"sql",
-				},
-				highlight = { enable = true },
-				indent = { enable = true },
+			require("nvim-treesitter").install({
+				"typescript",
+				"javascript",
+				"go",
+				"css",
+				"html",
+				"lua",
+				"json",
+				"bash",
+				"zsh",
+				"python",
+				"htmldjango",
 			})
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = { "BufReadPost", "BufNewFile" },
-		opts = function()
-			local tsc = require("treesitter-context")
-			Snacks.toggle({
-				name = "Treesitter Context",
-				get = function()
-					return tsc.enabled()
-				end,
-				set = function(state)
-					if state then
-						tsc.enable()
-					else
-						tsc.disable()
-					end
-				end,
-			}):map("<leader>ut")
-			return {
-				mode = "cursor",
-				max_lines = 3,
-			}
 		end,
 	},
 }

@@ -3,6 +3,7 @@ return {
 	version = "*",
 	dependencies = {
 		"L3MON4D3/LuaSnip",
+		"saghen/blink.compat",
 		"rafamadriz/friendly-snippets",
 	},
 	opts = {
