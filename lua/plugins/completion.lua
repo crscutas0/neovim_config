@@ -24,10 +24,7 @@ return {
 			default = { "lsp", "buffer", "path", "snippets" },
 			per_filetype = {
 				text = { "buffer", "path" },
-				sql = { "snippets", "dadbod", "buffer" },
-			},
-			providers = {
-				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				sql = { "snippets", "buffer" },
 			},
 		},
 
