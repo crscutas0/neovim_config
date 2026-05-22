@@ -48,7 +48,6 @@ vim.lsp.enable({
 })
 
 vim.diagnostic.config({
-	-- Use a filter function to only show diagnostics with severity 'ERROR'
 	severity_sort = true,
 	-- virtual_text = {
 	-- 	severity = { min = vim.diagnostic.severity.ERROR },
