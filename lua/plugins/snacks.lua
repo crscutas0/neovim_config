@@ -15,7 +15,14 @@ return {
 		indent = { enabled = false },
 		input = { enabled = true },
 		rename = { enabled = true },
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+			matcher = {
+				fuzzy = true,
+				ignorecase = true,
+				smartcase = false,
+			},
+		},
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = false },
