@@ -11,7 +11,6 @@ return {
 				json = { "prettierd" },
 				css = { "prettierd" },
 				html = { "prettierd" },
-				htmldjango = { "djlint" },
 				toml = { "tombi" },
 				lua = { "stylua" },
 				python = { "black", "reorder-python-imports" },

@@ -41,9 +41,8 @@ vim.lsp.enable({
 	"tailwindcss",
 	"svelte",
 	"gopls",
+	"html",
 	"djls",
-	-- "ruff",
-	-- "pylsp",
 	"basedpyright",
 })
 
