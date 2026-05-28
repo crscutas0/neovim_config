@@ -7,7 +7,7 @@ return {
 				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" }, -- add rustywind in the future
-				svelte = { "biome" },
+				svelte = { "prettierd" },
 				json = { "prettierd" },
 				css = { "prettierd" },
 				html = { "prettierd" },
@@ -47,6 +47,7 @@ return {
 			lint.linters_by_ft = {
 				javascript = { "biome" },
 				javascriptreact = { "biome" },
+				svelte = { "biome" },
 				typescript = { "biome" },
 				json = { "jsonlint" },
 				typescriptreact = { "biome" },
