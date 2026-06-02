@@ -19,6 +19,7 @@ return {
 				follow_current_file = {
 					enabled = true,
 				},
+				group_empty_dirs = true,
 			},
 			window = {
 				width = 40,
