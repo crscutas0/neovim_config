@@ -52,9 +52,12 @@ vim.diagnostic.config({
 	-- 	severity = { min = vim.diagnostic.severity.ERROR },
 	-- },
 	underline = {
-		severity = { min = vim.diagnostic.severity.ERROR },
+		severity = {
+			vim.diagnostic.severity.ERROR,
+			vim.diagnostic.severity.HINT,
+		},
 	},
-	signs = {
-		severity = { min = vim.diagnostic.severity.ERROR },
-	},
+	-- signs = {
+	-- 	severity = { min = vim.diagnostic.severity.ERROR },
+	-- },
 })
