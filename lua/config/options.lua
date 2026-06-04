@@ -44,6 +44,7 @@ vim.lsp.enable({
 	"html",
 	"djls",
 	"basedpyright",
+	"jdtls",
 })
 
 vim.diagnostic.config({
