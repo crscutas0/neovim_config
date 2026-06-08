@@ -14,7 +14,7 @@ return {
 				toml = { "tombi" },
 				lua = { "stylua" },
 				python = { "black", "reorder-python-imports" },
-				python = { "google-java-format" },
+				java = { "google-java-format" },
 			},
 
 			default_format_opts = {
