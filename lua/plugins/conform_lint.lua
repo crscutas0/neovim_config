@@ -15,6 +15,7 @@ return {
 				lua = { "stylua" },
 				python = { "black", "reorder-python-imports" },
 				java = { "google-java-format" },
+				go = { "gofumpt", "goimports" },
 			},
 
 			default_format_opts = {
