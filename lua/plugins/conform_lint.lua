@@ -3,12 +3,12 @@ return {
 		"stevearc/conform.nvim",
 		opts = {
 			formatters_by_ft = {
-				javascript = { "prettierd" },
+				javascript = { "biome" },
 				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" }, -- add rustywind in the future
 				svelte = { "prettierd" },
-				json = { "prettierd" },
+				json = { "biome" },
 				css = { "prettierd" },
 				html = { "prettierd" },
 				toml = { "tombi" },
@@ -50,7 +50,7 @@ return {
 				javascriptreact = { "biome" },
 				svelte = { "biome" },
 				typescript = { "biome" },
-				json = { "jsonlint" },
+				json = { "biome" },
 				typescriptreact = { "biome" },
 				python = { "flake8" },
 				html = { "htmlhint" },
