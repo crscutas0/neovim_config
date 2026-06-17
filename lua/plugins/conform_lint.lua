@@ -3,19 +3,20 @@ return {
 		"stevearc/conform.nvim",
 		opts = {
 			formatters_by_ft = {
+				java = { "google-java-format" },
+				python = { "black", "reorder-python-imports" },
+				go = { "gofumpt", "goimports" },
 				javascript = { "biome" },
-				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescript = { "prettierd" },
+				javascriptreact = { "prettierd" }, -- add rustywind in the future
 				typescriptreact = { "prettierd" }, -- add rustywind in the future
 				svelte = { "prettierd" },
-				json = { "biome" },
 				css = { "prettierd" },
 				html = { "prettierd" },
+				yaml = { "prettierd" },
 				toml = { "tombi" },
 				lua = { "stylua" },
-				python = { "black", "reorder-python-imports" },
-				java = { "google-java-format" },
-				go = { "gofumpt", "goimports" },
+				json = { "biome" },
 			},
 
 			default_format_opts = {
